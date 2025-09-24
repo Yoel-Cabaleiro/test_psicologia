@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Entrenador de Test</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="styles.css" />
+<!-- PapaParse por CDN (si prefieres local, comenta esta línea y añade el archivo local) -->
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+<header>
+<h1>Entrenador de Test</h1>
+<div class="pill active" data-tab="train">Entrenar</div>
+<div class="pill" data-tab="exam">Examen (300)</div>
+<div class="pill" data-tab="stats">Estadísticas</div>
+<span class="badge" id="datasetBadge">Cargando CSV…</span>
+<span class="grow"></span>
+<button id="pickCsvBtn" class="ghost">Cargar CSV</button>
+<input id="csvInput" type="file" accept=".csv" hidden />
+<button id="resetBtn" class="ghost">Reset progreso</button>
+</header>
+
+
+<main>
+<section id="train" class="card">
+<div class="row" style="justify-content:space-between;gap:8px">
+<div class="muted">Modo entrenamiento · refuerzo de falladas</div>
+<div class="badge">Falladas activas: <span id="hardCount">0</span></div>
+</div>
+<div id="trainPane" class="grid" style="margin-top:12px">
+<div id="trainQuestion"></div>
+</div>
+</section>
+
+
+<section id="exam" class="card" style="display:none">
+<div class="grid two">
+<div>
+<label>Semilla (opcional): <input id="seedInput" placeholder="auto" /></label>
+</div>
+<div>
+<label>Duración:
+<select id="durationSelect">
+<option value="90">90 min</option>
+<option value="120">120 min</option>
+<option value="150">150 min</option>
+</select>
+</label>
+</div>
+</div>
+<div class="actions" style="margin-top:12px">
+<button id="startExam" class="primary">Iniciar examen (300)</button>
+<div class="badge">Tiempo restante: <span class="timer" id="examTimer">–:–:–</span></div>
+</div>
+<div id="examPane" style="margin-top:16px"></div>
+</section>
+
+
+<section id="stats" class="card" style="display:none">
+<div id="statsPane">Sin datos aún.</div>
+</section>
+</main>
+
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
