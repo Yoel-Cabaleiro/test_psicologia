@@ -37,7 +37,7 @@ $('#statsPane').innerHTML = `
 <div class="opt"><div class="muted">Difíciles activas</div><div style="font-size:28px">${hard}</div></div>
 </div>
 <div class="grid" style="margin-top:12px">
-<div class="opt"><div class="muted">Exámenes realiados</div><div style="font-size:28px">${EXAMS.length}</div></div>
+<div class="opt"><div class="muted">Exámenes realizados</div><div style="font-size:28px">${EXAMS.length}</div></div>
 <div class="opt"><div class="muted">Nota media</div><div style="font-size:28px">${avgScore}%</div></div>
 </div>
 <h3 style="margin-top:16px">Últimos exámenes</h3>

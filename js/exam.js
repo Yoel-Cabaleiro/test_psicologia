@@ -19,7 +19,7 @@ const seed = ($('#seedInput').value || '').trim() || `auto-${Date.now()}`;
 const rand = rngFromSeed(seed);
 const order = QUESTIONS.map(q=>q.id);
 shuffleInPlace(order, rand);
-const selected = order.slice(0, Math.min(300, order.length));
+const selected = order.slice(0, Math.min(100, order.length));
 examState = { seed, durationMs: durMin*60*1000, startedAt: now(), endsAt: now()+durMin*60*1000, idx: 0, order: selected, answers: {} };
 $('#examPane').innerHTML = '';
 tickExamTimer();
